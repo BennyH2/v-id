@@ -16,4 +16,6 @@ return [
     'webhook' => [
         'keep_history' => false,
     ],
+
+    "group" => "System",
 ];
