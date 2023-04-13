@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('staff_prints', function (Blueprint $table) {
             $table->id('id');
-            $table->string('is_active'); //1
+            $table->string('is_active')->default(1); //1
             $table->timestamps();
             $table->foreignUuid('staff_id')
                 ->constrained('staff');

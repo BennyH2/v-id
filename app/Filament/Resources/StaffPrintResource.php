@@ -26,7 +26,7 @@ class StaffPrintResource extends Resource
 {
     protected static ?string $model = staff_prints::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-collection';
+    protected static ?string $navigationIcon = 'heroicon-o-printer';
 
     protected static ?string $navigationGroup = 'Card-Maker';
 

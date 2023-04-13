@@ -7,6 +7,9 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Filament\Facades\Filament;
 use Filament\Navigation\NavigationItem;
+use Filament\Notifications\Notification;
+use Filament\Pages\Page;
+use Illuminate\Validation\ValidationException;
 use Livewire\Livewire;
 
 class AppServiceProvider extends ServiceProvider
@@ -45,6 +48,13 @@ class AppServiceProvider extends ServiceProvider
         });
 
         Livewire::component('PhotoSection', PhotoSection::class);
+
+        Page::$reportValidationErrorUsing = function (ValidationException $exception) {
+            Notification::make()
+                ->title($exception->getMessage())
+                ->danger()
+                ->send();
+        };
 
     }
 }

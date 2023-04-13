@@ -14,7 +14,9 @@ class ManageSettings extends SettingsPage
 {
     protected static ?string $navigationIcon = 'heroicon-o-cog';
 
-    protected static ?string $navigationGroup = 'System';
+    protected static ?string $navigationGroup = 'Card-Maker';
+
+    protected static ?int $navigationSort = 5;
 
     protected static string $settings = BadgeSettings::class;
 
@@ -24,7 +26,7 @@ class ManageSettings extends SettingsPage
             Section::make('Card Details')
                 ->description('Manage The changing values for "Card Maker"')
                 ->schema([
-                    Toggle::make('is_redirect')->required()->label('Link Redirecting')->hint('Redirect QR Code to "Redirecting Link" or Custom Page (Coming Soon!)')->disabled(),
+                    Toggle::make('is_redirect')->required()->label('Link Redirecting')->hint('Redirect QR Code to "Redirecting Link" or Custom Page (Coming Soon!)'),
                     TextInput::make('qr_link')->required()->url()->label('Redirecting Link')->hint('Set the path of the Landing Page for the QR Code'),
                     FileUpload::make('site_logo')->required()->label('Site logo')->directory('site_logo'),
                     FileUpload::make('site_logo_big')->required()->label('Site logo Big')->directory('site_logo_big'),
