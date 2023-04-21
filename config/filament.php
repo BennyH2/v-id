@@ -177,7 +177,7 @@ return [
     */
 
     'database_notifications' => [
-        'enabled' => true,
+        'enabled' => false,
         'polling_interval' => '30s',
         'trigger' => 'notifications.database-notifications-trigger',
     ],
@@ -240,7 +240,7 @@ return [
             'alignment' => 'right',
         ],
         'sidebar' => [
-            'is_collapsible_on_desktop' => false,
+            'is_collapsible_on_desktop' => true,
             'groups' => [
                 'are_collapsible' => true,
             ],
@@ -258,7 +258,7 @@ return [
     |
     */
 
-    'favicon' => null,
+    'favicon' => "",
 
     /*
     |--------------------------------------------------------------------------

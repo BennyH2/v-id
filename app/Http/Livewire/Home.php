@@ -4,16 +4,18 @@ namespace App\Http\Livewire;
 
 use App\Models\ImageGallery;
 use App\Models\ImageGalleryCategory;
+use App\Settings\FrontEnd;
 use Livewire\Component;
 use Str;
 
 class Home extends Component
 {
-    public $images, $categories;
+    public $images, $categories, $favicon, $brochure;
 
-
-    public function mount()
+    public function mount(FrontEnd $settings)
     {
+        $this->favicon = $settings->favicon;
+        $this->brochure = $settings->brochure;
         $this->categories = ImageGalleryCategory::all();
         $this->images = $this->prepareImages();
     }

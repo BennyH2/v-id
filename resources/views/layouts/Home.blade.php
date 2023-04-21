@@ -29,18 +29,18 @@
   <link rel="canonical" href="http://www.generationsav.com/">
   <meta name="robots" content="index, follow">
 
-  <link rel="shortcut icon" type="image/x-icon" href="./assets/images/favicon.ico">
+  <link rel="shortcut icon" type="image/x-icon" href="{{asset('images/favicon/GAV-Favicon.svg')}}">
   <!-- Google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800;900&family=Rubik:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,300&display=swap" rel="stylesheet">
 
   <!-- Plugins css -->
-  <link rel="stylesheet" href="./assets/css/mobilemenu.css" />
+  <link rel="stylesheet" href="{{asset('./assets/css/mobilemenu.css')}}" />
   <!-- <link rel="stylesheet" href="./assets/css/glightbox.min.css" /> -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
   <!-- Tailwind css -->
-  <link rel="stylesheet" href="./assets/css/styles.css" />
+  <link rel="stylesheet" href="{{asset('./assets/css/styles.css')}}" />
 
 
   <script>

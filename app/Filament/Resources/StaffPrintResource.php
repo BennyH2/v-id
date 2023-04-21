@@ -28,6 +28,8 @@ class StaffPrintResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-printer';
 
+    protected static ?string $navigationLabel = "Staff ID'S";
+
     protected static ?string $navigationGroup = 'Card-Maker';
 
     protected static function getNavigationBadge(): ?string

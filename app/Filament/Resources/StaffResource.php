@@ -40,6 +40,8 @@ class StaffResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
 
+    protected static ?string $navigationLabel = "Staff Members";
+
     protected static ?string $navigationGroup = 'Card-Maker';
 
     public static function form(Form $form): Form

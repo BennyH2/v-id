@@ -2,7 +2,7 @@
 
 return [
     'navigation_label' => 'Logs',
-    'navigation_group' => 'Settings',
+    'navigation_group' => 'Developer',
     'title' => 'Logs',
     'search_placeholder' => 'Select or search a log file',
     'no_logs' => 'No Logs to display',

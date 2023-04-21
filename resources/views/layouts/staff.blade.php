@@ -15,7 +15,7 @@
     <!-- Open Graph meta tags (for social media sharing) -->
     <meta property="og:title" content="Generations A/V - Audio/Visual Solutions in Houston">
     <meta property="og:description" content="Generations A/V provides top-quality audio/visual services and support for your events in Houston.">
-    <meta property="og:image" content="http://example.com/image.jpg">
+    <meta property="og:image" content="{{asset('images/favicon/GAV-Favicon.svg')}}">
     <meta property="og:url" content="https://generationsav.com">
     <meta property="og:type" content="website">
 
@@ -23,13 +23,13 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Generations A/V - Audio/Visual Solutions in Houston">
     <meta name="twitter:description" content="Generations A/V provides top-quality audio/visual services and support for your events in Houston. Contact us today to learn more.">
-    <meta name="twitter:image" content="http://example.com/image.jpg">
+    <meta name="twitter:image" content="{{asset('images/favicon/GAV-Favicon.svg')}}">
 
     <!-- Other SEO elements -->
     <link rel="canonical" href="http://www.generationsav.com/">
     <meta name="robots" content="index, follow">
 
-    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/assets/images/favicon.ico')}}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset('images/favicon/GAV-Favicon.svg')}}">
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

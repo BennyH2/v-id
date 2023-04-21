@@ -3,7 +3,7 @@
 namespace App\Filament\Resources\UserResource\Pages;
 
 use App\Filament\Resources\UserResource;
-use App\Mail\WelcomeUserEmail;
+use App\Mail\WelcomeEmail;
 use Filament\Notifications\Notification;
 use Filament\Pages\Actions\CreateAction;
 use Filament\Resources\Pages\CreateRecord;
@@ -32,7 +32,9 @@ class CreateUser extends CreateRecord
             'created_at' => now(),
         ]);
 
-        Password::broker(config('filament-breezy.reset_broker', config('auth.defaults.passwords')))
-        ->sendResetLink(['email' => $this->record->email]);
+        Mail::to($this->record->email)->send(new WelcomeEmail([
+            'name' => $this->record->name,
+            'email' => $this->record->email,
+            'token' => $token,]));
     }
 }

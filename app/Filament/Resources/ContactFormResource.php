@@ -31,7 +31,7 @@ class ContactFormResource extends Resource implements HasShieldPermissions
 {
     protected static ?string $model = ContactForm::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-question-mark-circle';
+    protected static ?string $navigationIcon = 'heroicon-o-inbox';
 
     protected static ?string $navigationLabel = 'Contact Form';
 
