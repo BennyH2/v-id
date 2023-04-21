@@ -3,6 +3,7 @@
     <div class="md:block hidden fixed z-[98] bg-white dark:bg-dark_accent1 py-4 px-4 w-full mx-auto bottom-0 shadow-[0_0_25px_0_rgba(196,206,213,0.5)] dark:shadow-[-10px_0_20px_0_rgba(0,0,0,0.1)]">
       <nav>
         <ul class="flex justify-around items-center">
+        @if(auth()->check())
         @foreach ($menu as $item)
           <li>
             <a href="{{ $item['url'] }}" @if($item['blank']) target="_blank" @endif class="mobile--menu__nav--item bg-accent1 w-11 h-11 rounded-full text-white flex items-center justify-center relative transition-all duration-400">
@@ -20,6 +21,7 @@
              </span>
             </a>
           </li>
+        @endif
         @if(!auth()->check())
         <li>
             <a href="{{ route('login') }}" class="mobile--menu__nav--item bg-accent1 w-11 h-11 rounded-full text-white flex items-center justify-center relative transition-all duration-400">

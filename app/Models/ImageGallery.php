@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Kenepa\ResourceLock\Models\Concerns\HasLocks;
 use OwenIt\Auditing\Contracts\Auditable;
 use Spatie\Image\Manipulations;
 use Spatie\MediaLibrary\HasMedia;
@@ -13,7 +12,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class ImageGallery extends Model implements Auditable, HasMedia
 {
-    use HasFactory, \OwenIt\Auditing\Auditable, HasLocks, InteractsWithMedia;
+    use HasFactory, \OwenIt\Auditing\Auditable, InteractsWithMedia;
 
     public function registerMediaConversions(Media $media = null): void
     {

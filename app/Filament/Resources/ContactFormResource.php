@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\ContactFormResource\Pages;
 use App\Filament\Resources\ContactFormResource\RelationManagers;
 use App\Models\ContactForm;
+use BezhanSalleh\FilamentShield\Contracts\HasShieldPermissions;
 use Filament\Forms;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Grid;
@@ -26,7 +27,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Validation\ValidationException;
 use Tapp\FilamentAuditing\RelationManagers\AuditsRelationManager;
 
-class ContactFormResource extends Resource
+class ContactFormResource extends Resource implements HasShieldPermissions
 {
     protected static ?string $model = ContactForm::class;
 
@@ -41,6 +42,23 @@ class ContactFormResource extends Resource
     protected static function getNavigationBadge(): ?string
     {
         return static::getModel()::count();
+    }
+
+    public static function getPermissionPrefixes(): array
+    {
+        return [
+            'view',
+            'view_any',
+            'create',
+            'update',
+            'delete',
+            'delete_any',
+            'restore',
+            'restore_any',
+            'force_delete',
+            'force_delete_any',
+            'get_contact_email'
+        ];
     }
 
     public static function form(Form $form): Form
@@ -133,15 +151,15 @@ class ContactFormResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('name')->label("Name")->description(fn (ContactForm $record): string => $record->phone),
-                TextColumn::make('email')->label("Email")->copyable()->copyMessage('Email address copied')->copyMessageDuration(1500),
-                TextColumn::make('created_at')->since()->label("Since")->description(fn (ContactForm $record): string => $record->created_at),
+                TextColumn::make('name')->label("Name")->description(fn (ContactForm $record): string => $record->phone)->sortable(),
+                TextColumn::make('email')->label("Email")->copyable()->copyMessage('Email address copied')->copyMessageDuration(1500)->sortable(),
+                TextColumn::make('created_at')->since()->label("Since")->description(fn (ContactForm $record): string => $record->created_at)->sortable(),
                 SelectColumn::make('fol_status')
                 ->options([
                     'pending' => 'Pending',
                     'reviewing' => 'Reviewing',
                     'finished' => 'Finished',
-                ]),
+                ])->label("Followed Up")->sortable(),
             ])
             ->filters([
                 Filter::make('fol_status')->query(fn (Builder $query): Builder => $query->where('fol_status', 'pending'))->toggle()->label('Pending'),

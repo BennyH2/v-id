@@ -14,9 +14,15 @@ use Filament\Forms\Components\TextInput;
 use Filament\Tables\Columns\BooleanColumn;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\UserResource\Pages;
+use App\Mail\WelcomeUserEmail;
 use BezhanSalleh\FilamentShield\Facades\FilamentShield;
+use Filament\Forms\Components\Select;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Password;
 use STS\FilamentImpersonate\Impersonate;
-
+use Illuminate\Support\Str;
+use PhpParser\Parser\Multiple;
 
 class UserResource extends Resource
 {
@@ -59,20 +65,20 @@ class UserResource extends Resource
             Forms\Components\TextInput::make('password')->label(trans('filament-user::user.resource.password'))
                 ->password()
                 ->maxLength(255)
-                ->dehydrateStateUsing(static function ($state) use ($form){
-                    if(!empty($state)){
+                ->dehydrateStateUsing(static function ($state) use ($form) {
+                    if (!empty($state)) {
                         return Hash::make($state);
                     }
 
                     $user = User::find($form->getColumns());
-                    if($user){
+                    if ($user) {
                         return $user->password;
                     }
-            }),
+                }),
         ];
 
-        if(config('filament-user.shield')){
-            $rows[] = Forms\Components\MultiSelect::make('roles')->relationship('roles', 'name')->label(trans('filament-user::user.resource.roles'));
+        if (config('filament-user.shield')) {
+            $rows[] = Select::make('roles')->Multiple()->relationship('roles', 'name')->preload()->label(trans('filament-user::user.resource.roles'));
         }
 
         $form->schema($rows);
@@ -103,7 +109,7 @@ class UserResource extends Resource
                     ->query(fn (Builder $query): Builder => $query->whereNull('email_verified_at')),
             ]);
 
-        if(config('filament-user.impersonate')){
+        if (config('filament-user.impersonate')) {
             $table->prependActions([
                 Impersonate::make('impersonate'),
             ]);
@@ -111,13 +117,6 @@ class UserResource extends Resource
 
         return $table;
     }
-
-    protected function afterCreate(): void
-    {
-        //send a email to send to user after created
-        
-    }
-
 
 
     public static function getPages(): array

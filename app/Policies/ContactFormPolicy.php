@@ -134,7 +134,7 @@ class ContactFormPolicy
      */
     public function replicate(User $user, ContactForm $contactForm)
     {
-        return $user->can('replicate_contact::form');
+        return $user->can('{{ Replicate }}');
     }
 
     /**
@@ -145,7 +145,7 @@ class ContactFormPolicy
      */
     public function reorder(User $user)
     {
-        return $user->can('reorder_contact::form');
+        return $user->can('{{ Reorder }}');
     }
 
 }

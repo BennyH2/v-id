@@ -6,11 +6,10 @@ return [
         'slug' => 'shield/roles',
         'navigation_sort' => -1,
         'navigation_badge' => true,
-        'navigation_group' => "System",
+        'navigation_group' => true,
         'is_globally_searchable' => false,
         'show_model_path' => true,
     ],
-
 
     'auth_provider_model' => [
         'fqcn' => 'App\\Models\\User',
@@ -25,7 +24,7 @@ return [
 
     'filament_user' => [
         'enabled' => true,
-        'name' => 'user',
+        'name' => 'filament_user',
     ],
 
     'permission_prefixes' => [

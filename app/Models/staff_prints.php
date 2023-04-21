@@ -3,14 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Kenepa\ResourceLock\Models\Concerns\HasLocks;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class staff_prints extends Model implements HasMedia
 {
-    use HasFactory, InteractsWithMedia, HasLocks;
+    use HasFactory, InteractsWithMedia;
 
     /**
      * The attributes that are mass assignable.

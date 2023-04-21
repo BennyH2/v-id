@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\StaffResource\Pages;
 use App\Filament\Resources\StaffResource\RelationManagers;
 use App\Models\staff;
+use App\Models\User;
 use Filament\Forms;
 use Filament\Tables\Actions\Action;
 use Filament\Resources\Form;
@@ -70,7 +71,7 @@ class StaffResource extends Resource
                                     '3' => 'Owner',
                                 ])->default('1'),
                         ]),
-                    
+
                 ])->columnSpan(['sm' => 'full', 'lg' => 1]),
             ])->columns(3);
     }
@@ -114,7 +115,17 @@ class StaffResource extends Resource
                         'created_at', 'updated_at', 'deleted_at',
                     ]),
                 ]),
-
+                Action::make('updateAuthor')
+                    ->action('SendToUser')
+                    ->label('Send Form')
+                    ->form([
+                        Group::make()->schema([
+                            Card::make()->schema([
+                                Textinput::make('name')->label('Name')->required(),
+                                Textinput::make('email')->label('Email')->required()->email(),
+                            ])->columns(2),
+                        ])
+                    ])->icon('heroicon-s-user')->color('primary')
             ]);
     }
 

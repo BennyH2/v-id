@@ -4,12 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Kenepa\ResourceLock\Models\Concerns\HasLocks;
 use OwenIt\Auditing\Contracts\Auditable;
 
 class ContactForm extends Model implements Auditable
 {
-    use HasFactory, \OwenIt\Auditing\Auditable, HasLocks;
+    use HasFactory, \OwenIt\Auditing\Auditable;
 
     protected $fillable = [
         'name',
