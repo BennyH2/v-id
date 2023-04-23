@@ -9,7 +9,7 @@
         <!-- Preloader end -->
 
         <!-- Dark and light button start -->
-        <div class="fixed ltr:right-0 rtl:left-0 top-[50%] translate-y-[-50%] z-50">
+        <div class="fixed ltr:right-0 rtl:left-0 top-[50%] translate-y-[-50%] z-50 safari-translate-y-50 z-50">
             <button class="bg-accent1 w-[50px] h-[50px] text-white flex justify-center items-center rounded-lg ltr:rounded-tr-none ltr:rounded-br-none rtl:rounded-tl-none rtl:rounded-bl-none" id="light__to--dark">
                 <svg xmlns="http://www.w3.org/2000/svg" class="dark--mode__icon ionicon max-w-[25px] fill-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <title>Dark Mode</title>
