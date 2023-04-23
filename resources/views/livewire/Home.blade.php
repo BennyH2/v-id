@@ -123,7 +123,7 @@
         <!-- Main wrapper start -->
         <main>
             <!-- Hero section start -->
-            <section class="bg-cover bg-no-repeat bg-center sm:h-full only-md:h-screen lg:min-h-screen flex justify-center items-center overflow-hidden dark:bg-dark_primary_bg dark:border-b dark:border-dark_accent1" id="home" style="background-image:url('./assets/images/hero-background.svg'); background-repeat: no-repeat; background-attachment: fixed; background-size: cover; background-blend-mode: hard-light;">
+            <section class="bg-cover bg-no-repeat bg-center sm:h-full only-md:h-screen lg:min-h-screen flex justify-center items-center overflow-hidden dark:bg-dark_primary_bg dark:border-b dark:border-dark_accent1" id="home" style="background-image:url('./assets/images/hero-background.svg') !important; background-blend-mode: hard-light;">
                 <div class="container mx-auto flex sm:flex-col items-center justify-center lg:mt-[30px] only-md:mt-[40px] sm:pt-[100px] sm:pb-[70px] bg-opacity-50" style="background-color: rgba(255, 255, 255, 0.5);">
                     <div class="ltr:xl:pl-[95px] ltr:lg:pl-[50px] ltr:only-md:pl-[40px] rtl:xl:pr-[95px] rtl:lg:pr-[50px] rtl:only-md:pr-[40px] flex-grow sm:mt-[30px] sm:text-center">
                         <span class="text-accent1 text-[24px] font-semibold italic pb-[5px]">YOUR PROFESSIONAL SOURCE FOR</span>
