@@ -41,10 +41,27 @@
                                     <li>
                                         <a href="#home" class="text-[17px] xl:text-[19px] text-primary dark:text-white font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">Home</a>
                                     </li>
-                                    <li>
-                                        <a href="#about" class="text-[17px] xl:text-[19px] text-primary dark:text-white font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 ltr:ml-[26px] ltr:xl:ml-[44px] rtl:mr-[26px] rtl:xl:mr-[44px] relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">About</a>
+                                    <li class="dropdown">
+                                        <a class="text-[17px] xl:text-[19px] text-primary dark:text-white font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 ltr:ml-[26px] ltr:xl:ml-[44px] rtl:mr-[26px] rtl:xl:mr-[44px] cursor-pointer">About</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="#about" class="block px-4 py-2 hover:bg-accent1 hover:text-white">About Us</a></li>
+                                            <li><a href="jobs" class="block px-4 py-2 hover:bg-accent1 hover:text-white">Jobs</a></li>
+                                        </ul>
                                     </li>
-                                    </li>
+                                    <style>
+                                        .dropdown-menu {
+                                            display: none;
+                                            position: absolute;
+                                            background-color: rgb(234 32 40 / var(--tw-bg-opacity));
+                                            color: White;
+                                            border-radius: 5px;
+                                            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                                        }
+
+                                        .dropdown:hover .dropdown-menu {
+                                            display: block;
+                                        }
+                                    </style>
                                     <li>
                                         <a href="#services" class="text-[17px] xl:text-[19px] text-primary dark:text-white font-medium hover:text-accent1 dark:hover:text-accent1 transition duration-300 ltr:ml-[26px] ltr:xl:ml-[44px] rtl:mr-[26px] rtl:xl:mr-[44px] relative after:absolute after:content-[''] after:h-[2px] after:w-0 after:bottom-[3px] ltr:after:left-0 rtl:after:right-0 after:transition-[.5s] after:bg-accent1 py-[8px] hover:after:w-full">Services</a>
                                     </li>
@@ -99,6 +116,7 @@
                                 <li class="offcanvas__menu_li"><a class="offcanvas__menu_item dark:text-white" href="#services">Services</a></li>
                                 <li class="offcanvas__menu_li"><a class="offcanvas__menu_item dark:text-white" href="#portfolio">Our Work</a></li>
                                 <li class="offcanvas__menu_li"><a class="offcanvas__menu_item dark:text-white" href="#contact">Contact</a></li>
+
                             </ul>
                             <button class="flex mx-auto bg-accent1 lg:px-[15px] px-[12px] xl:py-[12px] py-[10px] rounded-[2rem] text-[16px] xl:text-[18px] font-medium text-white items-center transition duration-300 relative after:absolute :after:content-[''] after:bg-primary after:h-full after:w-full after:bottom-0 after:left-0 after:rounded-[2rem] after:trasition after:duration-300 after:opacity-0 hover:after:opacity-[1] mt-[30px]">
                                 <span class="icon bg-[#EFEBEB] text-accent1 w-[34px] h-[34px] rounded-full flex items-center justify-center ltr:xl:mr-[15px] ltr:mr-[10px] rtl:xl:ml-[15px] rtl:ml-[10px] relative z-[8] flex-shrink-0">
@@ -374,62 +392,6 @@
                 </div>
             </section>
             <!-- Services section end -->
-
-            <!-- Logo list section start -->
-            <section class="py-[70px] lg:py-[100px] border-b-[1px] border-[#DDDDDD] dark:border-dark_accent1">
-                <div class="container mx-auto">
-                    <div class="relative">
-                        <div class="w-full absolute h-[1px] bg-[#DDDDDD] top-[50%] translate-y-[-50%] ltr:left-0 rtl:right-0 2xs:hidden"></div>
-                        <div class="flex flex-wrap">
-                            <div class="max-w-[25%] 2xs:max-w-[50%] w-full ltr:border-r-[1px] rtl:border-l-[1px] border-[#DDDDDD] dark:border-dark_accent1 client__logo--padding">
-                                <div class="w-full client__logo--padding--inner 2xs:border-b-[1px] 2xs:border-[#DDDDDD] dark:2xs:border-dark_accent1">
-                                    <img class="mx-auto opacity-[0.7] hover:opacity-[1] transition duration-300 dark:hidden" src="./assets/images/logo/1.png" alt="">
-                                    <img class="mx-auto grayscale hover:grayscale-0 transition duration-300 dark:block hidden" src="./assets/images/logo/dark-log-1.png" alt="">
-                                </div>
-                                <div class="w-full client__logo--padding--inner 2xs:border-b-[1px] 2xs:border-[#DDDDDD] dark:2xs:border-dark_accent1">
-                                    <img class="mx-auto opacity-[0.7] hover:opacity-[1] transition duration-300 dark:hidden" src="./assets/images/logo/2.png" alt="">
-                                    <img class="mx-auto grayscale hover:grayscale-0 transition duration-300 dark:block hidden" src="./assets/images/logo/dark-log-2.png" alt="">
-                                </div>
-                            </div>
-
-                            <div class="max-w-[25%] 2xs:max-w-[50%] w-full ltr:border-r-[1px] rtl:border-l 2xs:border-none border-[#DDDDDD] dark:border-dark_accent1 client__logo--padding">
-                                <div class="w-full client__logo--padding--inner 2xs:border-b-[1px] 2xs:border-[#DDDDDD] dark:2xs:border-dark_accent1">
-                                    <img class="mx-auto opacity-[0.7] hover:opacity-[1] transition duration-300 dark:hidden" src="./assets/images/logo/3.png" alt="">
-                                    <img class="mx-auto grayscale hover:grayscale-0 transition duration-300 dark:block hidden" src="./assets/images/logo/dark-log-3.png" alt="">
-                                </div>
-                                <div class="w-full client__logo--padding--inner 2xs:border-b-[1px] 2xs:border-[#DDDDDD] dark:2xs:border-dark_accent1">
-                                    <img class="mx-auto opacity-[0.7] hover:opacity-[1] transition duration-300 dark:hidden" src="./assets/images/logo/4.png" alt="">
-                                    <img class="mx-auto grayscale hover:grayscale-0 transition duration-300 dark:block hidden" src="./assets/images/logo/dark-log-4.png" alt="">
-                                </div>
-                            </div>
-
-                            <div class="max-w-[25%] 2xs:max-w-[50%] w-full ltr:border-r-[1px] rtl:border-l border-[#DDDDDD] client__logo--padding dark:border-dark_accent1">
-                                <div class="w-full client__logo--padding--inner 2xs:border-b-[1px] 2xs:border-[#DDDDDD] dark:2xs:border-dark_accent1">
-                                    <img class="mx-auto opacity-[0.7] hover:opacity-[1] transition duration-300 dark:hidden" src="./assets/images/logo/5.png" alt="">
-                                    <img class="mx-auto grayscale hover:grayscale-0 transition duration-300 dark:block hidden" src="./assets/images/logo/dark-log-5.png" alt="">
-                                </div>
-                                <div class="w-full client__logo--padding--inner">
-                                    <img class="mx-auto opacity-[0.7] hover:opacity-[1] transition duration-300 dark:hidden" src="./assets/images/logo/6.png" alt="">
-                                    <img class="mx-auto grayscale hover:grayscale-0 transition duration-300 dark:block hidden" src="./assets/images/logo/dark-log-6.png" alt="">
-                                </div>
-                            </div>
-
-                            <div class="max-w-[25%] 2xs:max-w-[50%] w-full client__logo--padding">
-                                <div class="w-full client__logo--padding--inner 2xs:border-b-[1px] 2xs:border-[#DDDDDD] dark:2xs:border-dark_accent1">
-                                    <img class="mx-auto opacity-[0.7] hover:opacity-[1] transition duration-300 dark:hidden" src="./assets/images/logo/7.png" alt="">
-                                    <img class="mx-auto grayscale hover:grayscale-0 transition duration-300 dark:block hidden" src="./assets/images/logo/dark-log-7.png" alt="">
-                                </div>
-                                <div class="w-full client__logo--padding--inner">
-                                    <img class="mx-auto opacity-[0.7] hover:opacity-[1] transition duration-300 dark:hidden" src="./assets/images/logo/8.png" alt="">
-                                    <img class="mx-auto grayscale hover:grayscale-0 transition duration-300 dark:block hidden" src="./assets/images/logo/dark-log-8.png" alt="">
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- Logo list section end -->
 
             <!-- Portfolio section start -->
             <section class="bg-[#EFF3F7] dark:bg-dark_primary_bg pt-[70px] lg:pt-[100px] pb-[40px] lg:pb-[70px] dark:border-t dark:border-b dark:border-dark_accent1" id="portfolio">

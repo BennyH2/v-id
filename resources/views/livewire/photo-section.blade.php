@@ -30,11 +30,12 @@
     <!--Using Tailwind CSS classes for responsive design-->
     <div>
         <div>
+            @if(auth()->user())
             <label class="btn btn-primary" style="margin-bottom: 10px;">
                 <input type="file" name="image" class="image" accept="image/*" style="display: none;">Upload A Photo
             </label>
             <br>
-
+            @endif
             <div class="relative h-screen">
                 <div class="embed-responsive embed-responsive-16by9 sm:w-50 h-auto">
                     <video id="webcam" width="100%" height="100%" autoplay class="embed-responsive-item" style="display: none;" playsinline></video>

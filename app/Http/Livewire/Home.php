@@ -22,7 +22,7 @@ class Home extends Component
 
     public function prepareImages()
     {
-        $images = ImageGallery::with('categories')->get();
+        $images = ImageGallery::with('categories')->latest()->take(9)->get();
 
         // Map the images to include the category classes and media URL
         $images = $images->map(function ($image) {

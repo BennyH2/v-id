@@ -15,7 +15,7 @@
           </li>
         @endforeach
         <li>
-            <a href="#" class="mobile--menu__nav--item bg-accent1 w-11 h-11 rounded-full text-white flex items-center justify-center relative transition-all duration-400">
+            <a href="../faq" class="mobile--menu__nav--item bg-accent1 w-11 h-11 rounded-full text-white flex items-center justify-center relative transition-all duration-400">
               <span class="relative z-10">
               <x-icon class="h-16" width="25px" fill="currentColor" name="heroicon-o-information-circle"></x-icon>
              </span>
